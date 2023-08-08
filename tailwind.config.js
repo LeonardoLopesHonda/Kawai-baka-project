@@ -11,8 +11,15 @@ export default {
         "selected-carrousel": "#FCFF6B",
       },
       animation: {
-        "smooth": "transition: all 500ms ease-in-out",
+        "smooth-rotate": "rotate 750ms ease-in alternate fowards",
       },
+      keyframes: {
+        rotate: {
+          "0%": { transform: 'rotate(0deg)' },
+          "100%": { transform: 'rotate(180deg)' }
+        }
+      },
+      
     },
   },
   plugins: [],
