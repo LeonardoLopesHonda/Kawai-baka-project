@@ -21,7 +21,9 @@ export default {
           "100%": { transform: 'rotate(180deg)' }
         }
       },
-      
+      screens: {
+        "sm-h" : { 'raw' : '(min-height : 900px)'}
+      }
     },
   },
   plugins: [],

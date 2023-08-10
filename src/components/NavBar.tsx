@@ -176,10 +176,41 @@ function NavBar() {
             <div
               className={
                 isActive
-                  ? "absolute right-0 top-0 bottom-0 h-2/5 bg-secondary w-3/12 z-0"
+                  ? "absolute flex justify-end right-0 top-0 bottom-0 h-2/5 sm-h:h-1/3 bg-secondary w-3/12 z-0"
                   : "hidden"
               }
-            ></div>
+            >
+              <div className="flex flex-col w-full items-center justify-center self-end">
+                <a
+                  className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                  href=""
+                >
+                  <img src={Eye} alt="Completed animes" />
+                  Completados
+                </a>
+                <a
+                  className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                  href=""
+                >
+                  <img src={Favorites} alt="Favorites animes" />
+                  Favoritos
+                </a>
+                <a
+                  className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                  href=""
+                >
+                  <img src={Bug} alt="Report a Bug" />
+                  Reportar Bug
+                </a>
+                <a
+                  className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                  href=""
+                >
+                  <img src={Account} alt="Account Configs" />
+                  Conta
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </header>
