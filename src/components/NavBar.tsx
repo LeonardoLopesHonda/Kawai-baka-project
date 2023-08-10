@@ -1,6 +1,16 @@
 /** @format */
 import { useState } from "react";
-import { Menu, HomeLogo, Search, Settings, Close_X } from "../assets/SVGs";
+import {
+  Menu,
+  HomeLogo,
+  Search,
+  Settings,
+  Close_X,
+  Eye,
+  Favorites,
+  Bug,
+  Account,
+} from "../assets/SVGs";
 
 function NavBar() {
   const [isActive, setIsActive] = useState(false);
@@ -12,14 +22,62 @@ function NavBar() {
 
   return (
     <>
-      <header className="w-full fixed">
+      <header className="w-full top-0 left-0 right-0 fixed h-full">
         <div
           className={
             isSearchActive
-              ? "w-full grid grid-cols-4 items-center place-items-center lg:hidden"
+              ? "relative w-full grid grid-cols-4 items-center place-items-center lg:hidden"
               : "w-full grid grid-cols-4 items-center place-items-center bg-primary rounded-b-lg py-6 lg:hidden"
           }
         >
+          <div
+            className={
+              isActive
+                ? "flex flex-col items-center justify-between text-white-80 pt-28 absolute left-0 top-0 bottom-0 h-full bg-secondary w-4/5 md:w-3/4 lg:hidden"
+                : "hidden"
+            }
+          >
+            <div className="flex flex-col w-full items-center justify-center">
+              <a
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                href=""
+              >
+                <img src={Eye} alt="Completed animes" />
+                Completados
+              </a>
+              <a
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                href=""
+              >
+                <img src={Favorites} alt="Favorites animes" />
+                Favoritos
+              </a>
+            </div>
+            <div className="flex flex-col w-full">
+              <a
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                href=""
+              >
+                <img src={Bug} alt="Report a Bug" />
+                Reportar Bug
+              </a>
+              <a
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                href=""
+              >
+                <img src={Account} alt="Account Configs" />
+                Conta
+              </a>
+            </div>
+          </div>
+          <div
+            onClick={() => setIsActive(false)}
+            className={
+              isActive
+                ? "bg-shadow-bg absolute right-0 top-0 bottom-0 h-full w-1/5 md:w-1/4 lg:hidden"
+                : "hidden"
+            }
+          ></div>
           <div className="self-center col-span-1 md:justify-self-start md:ml-8 lg:hidden">
             <img
               onClick={() => {
@@ -82,7 +140,7 @@ function NavBar() {
             />
           </div>
         </div>
-        <div className="hidden w-full fixed lg:grid grid-cols-4 items-center place-items-center bg-primary rounded-b-lg lg:py-6">
+        <div className="hidden w-full lg:grid grid-cols-4 items-center place-items-center bg-primary rounded-b-lg lg:py-6">
           <a
             href="./"
             className="hidden self-center col-span-2 lg:block lg:col-span-1 lg:justify-self-start lg:ml-8"
@@ -105,8 +163,8 @@ function NavBar() {
               }}
               className={
                 isActive === true
-                  ? "opacity-50 w-14 mr-1.5"
-                  : "opacity-100 w-14 mr-1.5"
+                  ? "opacity-50 w-14 mr-1.5 z-10"
+                  : "opacity-100 w-14 mr-1.5 z-10"
               }
               style={{
                 transform: rotate,
@@ -115,6 +173,13 @@ function NavBar() {
               src={isActive === true ? Close_X : Settings}
               alt="Settings Icon"
             />
+            <div
+              className={
+                isActive
+                  ? "absolute right-0 top-0 bottom-0 h-2/5 bg-secondary w-3/12 z-0"
+                  : "hidden"
+              }
+            ></div>
           </div>
         </div>
       </header>

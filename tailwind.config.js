@@ -9,6 +9,8 @@ export default {
         "contrast": "#8A479E",
         "shadow-bg": "rgba(0, 0, 0, 0.8)",
         "selected-carrousel": "#FCFF6B",
+        "line": "#1F1F1F",
+        "white-80": "rgba(255, 255, 255, .8)"
       },
       animation: {
         "smooth-rotate": "rotate 750ms ease-in alternate fowards",
