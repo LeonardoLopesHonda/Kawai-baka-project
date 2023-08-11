@@ -1,14 +1,16 @@
 /** @format */
 
+import { Carousel } from "./components/Carousel";
 import NavBar from "./components/NavBar";
+import { register } from "swiper/element";
 
-/**
- * npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch
- */
+register();
+
 function App() {
   return (
     <>
       <NavBar />
+      <Carousel />
     </>
   );
 }

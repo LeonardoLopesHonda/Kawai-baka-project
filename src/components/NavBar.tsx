@@ -22,7 +22,7 @@ function NavBar() {
 
   return (
     <>
-      <header className="w-full top-0 left-0 right-0 fixed h-full">
+      <header className="w-full block">
         <div
           className={
             isSearchActive
@@ -33,20 +33,20 @@ function NavBar() {
           <div
             className={
               isActive
-                ? "flex flex-col items-center justify-between text-white-80 pt-28 absolute left-0 top-0 bottom-0 h-full bg-secondary w-4/5 md:w-3/4 lg:hidden"
+                ? "flex flex-col items-center justify-between text-white-80 pt-28 absolute left-0 top-0 bottom-0 h-screen bg-secondary z-10 w-4/5 md:w-3/4 lg:hidden"
                 : "hidden"
             }
           >
             <div className="flex flex-col w-full items-center justify-center">
               <a
-                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-14"
                 href=""
               >
                 <img src={Eye} alt="Completed animes" />
                 Completados
               </a>
               <a
-                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-14"
                 href=""
               >
                 <img src={Favorites} alt="Favorites animes" />
@@ -55,14 +55,14 @@ function NavBar() {
             </div>
             <div className="flex flex-col w-full">
               <a
-                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-14"
                 href=""
               >
                 <img src={Bug} alt="Report a Bug" />
                 Reportar Bug
               </a>
               <a
-                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-8"
+                className="flex gap-2 text-2xl border-t border-b border-line w-full justify-start items-center py-2 pl-14"
                 href=""
               >
                 <img src={Account} alt="Account Configs" />
@@ -78,7 +78,7 @@ function NavBar() {
                 : "hidden"
             }
           ></div>
-          <div className="self-center col-span-1 md:justify-self-start md:ml-8 lg:hidden">
+          <div className="self-center z-10 col-span-1 md:justify-self-start md:ml-8 lg:hidden">
             <img
               onClick={() => {
                 handleClick();
