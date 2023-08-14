@@ -156,7 +156,7 @@ function NavBar() {
               type="text"
             />
           </div>
-          <div className="hidden lg:flex lg:items-center lg:col-span-1 lg:justify-self-end lg:mr-8">
+          <div className="hidden lg:flex lg:items-center lg:col-span-1 lg:justify-self-end lg:mr-8 z-10">
             <img
               onClick={() => {
                 handleClick();

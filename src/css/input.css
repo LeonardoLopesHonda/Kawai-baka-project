@@ -7,10 +7,19 @@
     padding: 0;
 }
 
+:root {
+    --selected-carousel: "#FCFF6B";
+}
+
 #root, body {
     width: 100%;
     /* height: 100%; */
 
     /* Remover se causar problemas com scroll */
     height: 100dvh;
+}
+
+.swiper-pagination-bullets {
+    /* margin-bottom:  !important; */
+    bottom: clamp(.25rem, .45rem, 1rem) !important;
 }

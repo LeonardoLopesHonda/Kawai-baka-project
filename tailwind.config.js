@@ -8,7 +8,7 @@ export default {
         "secondary": "#1E1122",
         "contrast": "#8A479E",
         "shadow-bg": "rgba(0, 0, 0, 0.8)",
-        "selected-carrousel": "#FCFF6B",
+        "selected-carousel": "#FCFF6B",
         "line": "#1F1F1F",
         "white-80": "rgba(255, 255, 255, .8)"
       },
@@ -22,7 +22,8 @@ export default {
         }
       },
       screens: {
-        "sm-h" : { 'raw' : '(min-height : 900px)'}
+        "sm-h" : { 'raw' : '(min-height : 900px)'},
+        "xs": {'raw' : '(min-width: 426px)'}
       }
     },
   },
