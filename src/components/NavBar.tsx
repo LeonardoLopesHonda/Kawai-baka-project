@@ -17,6 +17,7 @@ function NavBar() {
   const [isSearchActive, setIsSearchActive] = useState(false);
 
   const handleClick = () => setIsActive(!isActive);
+  const searchHandleClick = () => setIsSearchActive(!isSearchActive);
 
   const rotate = !isActive ? "rotate(180deg)" : "rotate(0deg)";
 
@@ -109,35 +110,74 @@ function NavBar() {
           <div
             className={
               isSearchActive
-                ? "w-full col-span-4 flex justify-around items-center px-2 py-8 bg-secondary rounded-b-xl md:justify-between md:px-8 lg:hidden"
-                : "self-center col-span-1 md:justify-self-end md:mr-8 lg:hidden"
+                ? "w-full h-screen z-10 col-span-4 flex flex-col justify-between items-end p-8 bg-secondary md:justify-between md:px-8 lg:hidden"
+                : "self-center col-span-1 md:justify-self-end md:mr-8 lg:hidden overflow-hidden"
             }
           >
             <img
               onClick={() => {
-                setIsSearchActive(true);
+                searchHandleClick();
               }}
               className="w-11"
-              src={Search}
+              src={isSearchActive ? Close_X : Search}
               alt="Search Icon"
             />
-            <input
+            <div
               className={
                 isSearchActive
-                  ? "w-1/2 focus:outline-none placeholder:focus:text-transparent bg-transparent text-lg text-white border-b-2 border-gray-600 md:w-3/5"
+                  ? "w-full h-auto m-auto text-white flex flex-wrap gap-10 sm:justify-center"
                   : "hidden"
               }
-              placeholder="Ex: One Piece"
-              type="text"
-            />
-            <img
-              onClick={() => {
-                setIsSearchActive(false);
-              }}
-              className={isSearchActive ? "w-11" : "hidden"}
-              src={Close_X}
-              alt="Close"
-            />
+            >
+              <h1 className="text-3xl">Gêneros</h1>
+              <div className="w-full h-auto m-auto text-white flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Shounen
+                </a>
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Seinen
+                </a>
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Terror
+                </a>
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Aventura
+                </a>
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Magia
+                </a>
+                <a
+                  href=""
+                  className="bg-primary p-3 px-6 rounded-2xl text-center"
+                >
+                  Romance
+                </a>
+              </div>
+            </div>
+            <button
+              className={
+                isSearchActive
+                  ? "bg-contrast p-4 px-16 rounded-3xl mx-auto text-white text-xl"
+                  : "hidden"
+              }
+            >
+              Pesquisar
+            </button>
           </div>
         </div>
         <div className="hidden w-full lg:grid grid-cols-4 items-center place-items-center bg-primary rounded-b-lg lg:py-6">
