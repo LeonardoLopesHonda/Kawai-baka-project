@@ -1,5 +1,6 @@
 /** @format */
 
+import AnimesCarousel from "./components/AnimesCarousel";
 import { Carousel } from "./components/Carousel";
 import NavBar from "./components/NavBar";
 import { register } from "swiper/element";
@@ -11,6 +12,8 @@ function App() {
     <>
       <NavBar />
       <Carousel />
+      <AnimesCarousel title="Recomendados" />
+      <AnimesCarousel title="Assistidos" />
     </>
   );
 }
